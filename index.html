@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            u{
+                color: lightcoral
+            }
+            .allure-div{
+                width: 500px;
+                position: relative;
+                text-align: center;
+                margin-top: 10%;
+            }
+            .allure-div>p{
+                padding: 10px;
+                font-size: 13px;
+                top: -10%;
+                left: 85%;
+                right: -25%;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.908);
+                color: lightblue;
+                -webkit-backdrop-filter: blur(2px);
+                backdrop-filter: blur(2px);
+                /* border: 2px solid; */
+                border-radius: 12px;
+
+            }
+            .allure{
+                width: 100%;
+                border-radius: 25px;
+                border: 4px solid black;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    </head>
+    <body>
+        <main>
+            <section id="cover">
+                <h1 class="biggerh1">L'Institue Supérieur d'Informatique</h1>
+                <h1 class="biggerh1">L1CS03 </h1><br><br>
+                <h1 class="biggerh1">Cours Analyse 2 </h1><br>
+                <h1 class="biggerh1">Chapitre 2</h1>
+                <img src="assets/chapter_logo.png" alt="">
+                <h1>Intégrales généralisées (ou impropres)</h1>
+            </section>
+            <div class="sep"></div>
+            <h2>
+                DÉfinition et premiers exemples
+            </h2>
+            
+            <div class="frame">
+                Soit \(f\): <span class="math">]a, b]  &longrightarrow; &realine; </span> une fonction continue donc intégrable sur <span class="math">]a, b]</span><br>
+                <sp-ce>8</sp-ce><span class="math">[a, b[  &longrightarrow; &realine; </span> une fonction continue donc intégrable sur <span class="math">[a, b[</span><br>
+                <sp-ce>8</sp-ce><span class="math">]a, b[  &longrightarrow; &realine; </span> une fonction continue donc intégrable sur <span class="math">]a, b[</span><br>
+                avec \(-\infin\); &le; a &lt; b &le; \(+\infin\);
+                <br><br>
+                On appelle intégrale généralisée de f sur <span class="math">]a, b]</span> et on note \[I = \int_a^b{f(x) \; dx} = \lim\limits_{T \to a^{+}}{\int_T^b{f(x) \; dx}}\] <br>
+                Si cette limite existe et est finie, on dit que \(I\) converge.
+                <sp-ce>19</sp-ce>elle est dite divergente dans le cas contraire <br>
+                <sp-ce>11</sp-ce>On parle de la nature d'une integrale généralisée. <br>
+            
+            </div><br>
+            
+            <div class="frame">
+                <h3><u>Rappel</u></h3>
+                soit \(f\): [a, b] &longrightarrow; &realine; une fonction continue sur <span class="math">]a, b]</span><br>
+                &nbsp;\(-\infin\) &lt; a &lt; b &lt; \(+\infin\)
+                \[\int_a^b{f(x) \; dx} = \left[F(x)\right]_a^b \\[4px] \qquad\qquad\qquad\quad= f(b) - f(a)\]<br>
+                <center>ou \(F\) est une primitive de \(f\)</center>
+                <br><br>
+                <hr>
+                <!-- <br> -->
+                <div class="allure-div">
+                    <img class="allure" src="assets/allure1.png" alt="">
+                    <p>\(\int_a^b{f(x) \; dx}\) = La mesure de la surface finie bornée par: <br>(x = a\) <br>(x = b\) <br> \(&Cscr;_f\) <br> et <br> l'axe des abscisses </p>
+                </div>
+            </div><br>
+            
+            <div class="frame">
+                <h3><u>Exemples</u> <br>Déterminer la nature des intégrales généralisées suivants</h3>
+                <br>
+                <div class="frame">
+                    \[I_1 = \int_1^{+\infin}{\frac{dx}{1 + x^2}}\]
+                    \(u &RightTeeArrow; \frac{1}{1 + x^2} \) est continue donc intégrable sur \([1, +\infin[\) <br><br>
+                    et on a : <br>
+                    \(I_1 = \lim\limits_{T \; \to \; +\infin } \int_1^T{\frac{dx}{1 + x^2}} \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; +\infin }\left[arctg(x)\right]_1^T \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; +\infin } arctg(T) - arctg(1) \\[8px]\)
+                    \(\;\;\;\; = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}\) : fini donc \(I_1\) converge vers \(\frac{\pi}{4}\)
+                    <br><br>
+                    <hr>
+                    <h4>
+                        Donner l'allure de \(&Cscr;_f\) sur \([1, \;+\infin[\) où \(f(x) = \frac{1}{1 + x^2}\)
+                    </h4>
+                    <div align="center">
+                        \(f^{'}(x) &lt; 0\) Donc \( f &searr;\) (Décroissante) \( \\[7px]\)
+                        \(\lim\limits_{+\infin} f(x) = 0 \) \( \\[7px]\)
+                        \(f(1) = \frac{1}{2} \) <br>
+                    </div><br>
+                    <div class="allure-div">
+                        <img class="allure" src="assets/allure2.png" alt="">
+                        <p>La mesure de la surface infinie bornée par \(x = 1\), \(&Cscr;_f\) et l'axe des abscisses est une mesure finie égale à \(\frac{\pi}{4}\)</p>
+                    </div>
+                </div><br>
+                <div class="frame">
+                    \[I_2 = \int_1^2{\frac{dx}{x - 1}}\]
+                    \(u &RightTeeArrow; \frac{1}{x - 1} \) est continue donc intégrable sur \(]1, 2]\) <br><br>
+                    et on a : <br>
+                    \(I_2 = \lim\limits_{T \; \to \; 1^+ } \int_1^2{\frac{dx}{x - 1}} \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; 1^+ }\left[ln\,|x - 1|\right]_T^2 \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; 1^+ } ln\,1 - ln\,|T - 1| \qquad or \; ln\,1 = 0 \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; 1^+ } -\; ln\,|T - 1| \\[8px]\)
+                    \(\;\;\;\; = +\infin\) : Donc \(I_2\) Diverge
+                    <br><br><hr><br>
+                    <h4>
+                        \[f(x) = \frac{1}{x - 1}\]
+                    </h4>
+                    <div class="allure-div">
+                        <img class="allure" src="assets/allure3.png" alt="">
+                        <p>\(\int_1^2{\frac{dx}{x - 1}}\) : La mesure de la surface infinie bornée par: <br> \(x = 1\)  <br> \(x = 2\) <br> \(&Cscr;_f\) <br> l'axe des abscisses <br><br> est une mesure infinie</p>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="frame">
+                <h3>
+                    <u>Exercice</u>
+                </h3><br>
+                <div class="frame">
+                    <h3>
+                        1&rpar; Déterminer la nature de
+                        \[I_1 = \int_1^{+\infin}{e^{-x} \; dx}\]
+                    </h3>
+                    \(u &RightTeeArrow; \frac{1}{1 + x^2} \) est continue donc intégrable sur \([1, +\infin[\) <br><br>
+                    et on a : <br>
+                    \(I_1 = \lim\limits_{T \; \to \; +\infin } \int_1^T{e^{-x}} \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; +\infin }\left[-e^{-x}\right]_1^T \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; +\infin }  -e^{-T} + e^{-1} = e^{-1}\) : fini donc \(I_1\) converge
+                </div><br>
+                <h3><u>La théorème d'intégration par parties</u></h3>
+                <p>
+                    Soient \(u, v : [a, \;b] &longrightarrow; &realine;\) de classe \(C^1\) sur \([a, \;b] \\[6px]\) <sp-ce>7</sp-ce>\(-\infin &lt; a &lt; b &lt; + \infin\)
+                    <br>
+                    Alors <br>
+                    <h3>
+
+                    </h3>
+                    <sp-ce>4</sp-ce>\(\int_a^b{u(x)\;v^{'}(x)\;dx} = \left[u(x)\;v(x)\right]_a^b- \int_a^b{u^{'}\;v(x)\;dx} \\[8px]\)
+                    <sp-ce>19</sp-ce>\(\;= u(b)\;v(b) - u(a)\;v(a) \;- \int_a^b{u^{'}\;v(x)\;dx} \) <br><br>
+                    <h3>
+                        \[
+                            u(x) = \qquad &longrightarrow;\!\!\!\!\!\!\!{'} \quad\; u^{'}(x) = \qquad \\[4px]
+                            v^{'}(x) = \qquad &longrightarrow;\!\!\!\!\!\!\!\!\!\!\int \quad v(x) = \qquad
+                        \]
+                    </h3>
+                    
+                </p>
+                <br>
+                <div class="frame">
+                    <h3>
+                        2&rpar; En déduire la nature de
+                        \[I_2 = \int_1^{+\infin}{x\,e^{-x} \; dx}\]
+                    </h3>
+                    \(u &RightTeeArrow; x\;e^{-x} \) est continue donc intégrable sur \(]1, 2]\) <br><br>
+                    et on a : <br>
+                    \[
+                        u(x) = x \;\;\;\;&longrightarrow;\!\!\!\!\!\!\!{'} \quad\; u^{'}(x) = 1 \qquad \\[4px]
+                        v^{'}(x) = e^{-x}&longrightarrow;\!\!\!\!\!\!\!\!\!\!\int \quad v(x) = -e^{-x}
+                    \]
+                    \(I_2 = \lim\limits_{T \; \to \; + \infin } \int_1^T{x\;e^{-x} \; dx} \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; + \infin }\left[x\;e^{-x}\right]_T^1 + \int_1^T{e^{-x} \; dx} \\[8px]\)
+                    \(\;\;\;\; = \lim\limits_{T \; \to \; + \infin } -Te^{-T} + e^{-1} + \int_1^T{e^{-x} \; dx} \\[2px]\)
+                    \(\qquad\qquad\qquad 0 \; &crarr; \qquad\qquad\qquad&larrpl; \;e^{-1}  \\[4px]\)
+                    
+                    \(\;\;\;\; = 2e^{-1} &lt;\infin\) Donc \(I_2\) Converge
+                </div>
+            </div><br>
+
+            <div class="frame">
+                <h3>
+                    <u>Exercice</u>
+                </h3><br>
+                <div class="frame">
+                    <h3>
+                        \[
+                        I_1 = \int_1^{+\infin}{\frac{dx}{x} \; dx}
+                        \]
+                    </h3>
+                </div><br>
+                <div class="frame">
+                    <h3>
+                        \[
+                        I_2 = \int_1^{+\infin}{\frac{dx}{\sqrt{x}} \; dx}
+                        \]
+                    </h3>
+                </div><br>
+                <div class="frame">
+                    <h3>
+                        \[
+                        I_3 = \int_1^{+\infin}{\frac{dx}{x^2} \; dx}
+                        \]
+                    </h3>
+                </div><br>
+            </div><br>
+
+            <div class="frame">
+                <h3>
+                    <center style="color: lightcoral;">Exemple fondamental</center>
+                </h3>
+                <p>
+                    Les intégrales de Rienann <br>
+                    Discuter suivant les valeurs de \(&alpha; &in; &realine;\) la nature de
+                    \[
+                        I_{&alpha;} = \int_{a &gt; 0}^{+ \infin}{\frac{dx}{x^{&alpha;}}}
+                    \]
+                </p>
+            </div><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <script src="script.js"></script>
+    </body>
+</html>
